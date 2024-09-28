@@ -15,10 +15,10 @@ a = [1,2,3]
 
 # 进程函数
 def fun():
-    # print("开始一个进程")
-    # for i in range(2):
-    #     sleep(2)
-    #     print("我是新进程")
+    print("开始一个进程")
+    for i in range(2):
+        sleep(2)
+        print("我是新进程")
     global a
     a[0] = 1000
     print("结束一个进程")
@@ -33,9 +33,9 @@ p = mp.Process(target=fun)
 p.start()
 
 # 父进程会执行这部分代码
-# for i in range(2):
-#     sleep(1)
-#     print("我是父进程,啦啦啦")
+for i in range(2):
+    sleep(1)
+    print("我是父进程,啦啦啦")
 
 # 回收进程
 p.join()
